@@ -10,20 +10,22 @@
     </div>
 </template>
 
-<script setup lang="ts" name="Person234">
-    // 数据 不是响应式
-    let name='xiaoxiao'
-    let age=18
+<script setup lang="ts" name="Person">
+    import { ref } from "vue";
+
+    // 数据 响应式
+    let name=ref('xiaoxiao')
+    let age=ref(18)
     let tel=13888888888
     let address='嘉兴市'
 
     // 方法
     function changeName(){
-        name='xiaoxiao520'  //修改name 页面无变化
+        name.value='xiaoxiao520'  //修改name 页面无变化
         console.log(name) 
     }
     function changeAge() {
-        age+=1
+        age.value+=1
     }
     function showTel() {
         alert(tel)
